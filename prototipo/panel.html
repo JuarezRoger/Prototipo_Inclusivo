@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel institucional RNP — RNP Accesible</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Saltar al contenido principal</a>
+
+<header class="app-header">
+  <h1>Panel institucional RNP</h1>
+  <p class="app-tagline">Bandeja de revisión manual — personal autorizado</p>
+</header>
+
+<main id="main" class="panel-main">
+  <p><a href="index.html">← Volver al inicio del prototipo</a></p>
+
+  <p id="panel-status" class="visually-hidden" role="status" aria-live="polite"></p>
+
+  <table class="review-table" id="review-table">
+    <caption>Solicitudes en revisión manual por baja calidad de imagen</caption>
+    <thead>
+      <tr>
+        <th scope="col">Folio</th>
+        <th scope="col">Departamento</th>
+        <th scope="col">Motivo de revisión</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="review-tbody">
+      <!-- filas generadas por app-panel.js -->
+    </tbody>
+  </table>
+
+  <div id="detail-panel" class="detail-panel" hidden>
+    <h2 id="detail-heading">Detalle de la solicitud</h2>
+    <div id="detail-body"></div>
+    <button type="button" id="detail-close" class="btn-secondary">Cerrar detalle</button>
+  </div>
+</main>
+
+<footer class="app-footer">
+  <p>Prototipo académico — Proyecto Final Integrador, Inclusión y Accesibilidad Digital, UTH Honduras.</p>
+</footer>
+
+<script src="app-panel.js"></script>
+</body>
+</html>

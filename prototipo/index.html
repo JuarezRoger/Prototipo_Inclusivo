@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RNP Accesible — Sofía te ayuda con tus trámites</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Saltar al contenido principal</a>
+
+<header class="app-header">
+  <h1>RNP Accesible</h1>
+  <p class="app-tagline">Sofía te ayuda con tus trámites del Registro Nacional de las Personas</p>
+  <div class="lang-switch" role="group" aria-label="Selector de idioma">
+    <button type="button" class="lang-btn is-active" data-lang="es" aria-pressed="true">Español</button>
+    <button type="button" class="lang-btn" data-lang="len" aria-pressed="false">Lenca</button>
+    <button type="button" class="lang-btn" data-lang="mis" aria-pressed="false">Miskito</button>
+  </div>
+  <p id="lang-status" class="visually-hidden" role="status" aria-live="polite"></p>
+</header>
+
+<main id="main">
+
+  <section id="view-home" class="view">
+    <h2 class="visually-hidden">Elige un trámite</h2>
+    <div class="card-grid">
+      <button type="button" class="flow-card" data-flow="flow1">
+        <span class="flow-icon" aria-hidden="true">📄</span>
+        <h2 class="flow-card-title">Solicitar mi certificado de nacimiento</h2>
+        <p>Trámite guiado por chat, con opción de nota de voz. Ideal para conexiones lentas.</p>
+      </button>
+      <button type="button" class="flow-card" data-flow="flow2">
+        <span class="flow-icon" aria-hidden="true">🤝</span>
+        <h2 class="flow-card-title">Gestionar el trámite de un familiar a mi cargo</h2>
+        <p>Para cuidadoras y cuidadores que gestionan trámites en representación de un dependiente.</p>
+      </button>
+      <button type="button" class="flow-card" data-flow="flow3">
+        <span class="flow-icon" aria-hidden="true">🤟</span>
+        <h2 class="flow-card-title">Trámite con video-asistencia en Lengua de Señas Hondureña</h2>
+        <p>Menú simplificado con apoyo visual en LESHO para personas sordas.</p>
+      </button>
+    </div>
+    <p class="panel-link-wrap">
+      <a href="panel.html" class="panel-link">Panel institucional RNP (personal autorizado) →</a>
+    </p>
+  </section>
+
+  <section id="view-flow1" class="view chat-view" hidden>
+    <h2>Certificado de nacimiento — chat con Sofía</h2>
+    <div class="chat-window" id="chat1-window" role="log" aria-live="polite" aria-label="Conversación con Sofía"></div>
+    <div class="chat-options" id="chat1-options"></div>
+    <button type="button" class="btn-secondary back-home" data-target="view-home">← Volver al inicio</button>
+  </section>
+
+  <section id="view-flow2" class="view" hidden>
+    <h2>Gestión delegada — trámite de un familiar</h2>
+    <div id="flow2-banner" class="proxy-banner" hidden></div>
+    <div id="flow2-content"></div>
+    <button type="button" class="btn-secondary back-home" data-target="view-home">← Volver al inicio</button>
+  </section>
+
+  <section id="view-flow3" class="view" hidden>
+    <h2>Trámite con video-asistencia en LESHO</h2>
+    <div id="flow3-content"></div>
+    <button type="button" class="btn-secondary back-home" data-target="view-home">← Volver al inicio</button>
+  </section>
+
+</main>
+
+<footer class="app-footer">
+  <p>Prototipo académico — Proyecto Final Integrador, Inclusión y Accesibilidad Digital, UTH Honduras.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+:root {
+  --wa-header: #075E54;
+  --wa-header-dark: #054c43;
+  --wa-bubble-bot: #FFFFFF;
+  --wa-bubble-user: #DCF8C6;
+  --text-main: #1F1F1F;
+  --bg: #ECE5DD;
+  --focus-ring: #1a73e8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-main);
+  background: #F7F7F5;
+  line-height: 1.5;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: #000;
+  color: #fff;
+  padding: 12px 16px;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 8px;
+  top: 8px;
+}
+
+a:focus, button:focus, input:focus, select:focus, [tabindex]:focus {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.app-header {
+  background: var(--wa-header);
+  color: #FFFFFF;
+  padding: 20px 16px;
+  text-align: center;
+}
+.app-header h1 { margin: 0 0 4px; font-size: 1.6rem; }
+.app-tagline { margin: 0 0 14px; font-size: 1rem; }
+
+.lang-switch { display: inline-flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.lang-btn {
+  background: var(--wa-header-dark);
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.lang-btn.is-active { border-color: #fff; font-weight: 700; }
+
+main { max-width: 760px; margin: 0 auto; padding: 24px 16px 60px; }
+
+.card-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .card-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.flow-card {
+  display: block;
+  text-align: left;
+  background: #fff;
+  border: 2px solid #d8d8d8;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  min-height: 44px;
+}
+.flow-card:hover { border-color: var(--wa-header); }
+.flow-icon { font-size: 2rem; display: block; margin-bottom: 8px; }
+.flow-card-title { font-size: 1.05rem; margin: 0 0 6px; color: var(--text-main); }
+.flow-card p { margin: 0; font-size: 0.92rem; color: #444; }
+
+.panel-link-wrap { margin-top: 28px; text-align: center; }
+.panel-link {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 2px solid var(--wa-header);
+  border-radius: 8px;
+  color: var(--wa-header);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.view h2 { color: var(--wa-header-dark); }
+
+.chat-view { background: var(--bg); border-radius: 12px; padding: 16px; }
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 160px;
+  margin-bottom: 16px;
+}
+.chat-bubble {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--wa-bubble-bot);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+}
+.chat-bubble.from-user {
+  align-self: flex-end;
+  background: var(--wa-bubble-user);
+}
+.chat-bubble p { margin: 0; }
+
+/* Texto secundario de metadatos del chat (hora de envío) */
+.chat-meta {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: #5B5B5B;
+}
+
+.chat-options { display: flex; flex-direction: column; gap: 10px; }
+.chat-options button, .btn-primary {
+  background: var(--wa-header);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  min-height: 44px;
+}
+.chat-options button:hover, .btn-primary:hover { background: var(--wa-header-dark); }
+
+.icon-btn {
+  font-size: 1.4rem;
+  padding: 10px 14px;
+  min-width: 52px;
+  text-align: center;
+}
+
+.btn-secondary {
+  margin-top: 20px;
+  background: transparent;
+  border: 2px solid #888;
+  color: #333;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.proxy-banner {
+  background: #FFF3CD;
+  border: 1px solid #E0C36A;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.form-row { margin-bottom: 14px; display: flex; flex-direction: column; gap: 6px; }
+.form-row label { font-weight: 600; }
+.form-row input, .form-row select {
+  padding: 10px;
+  border: 2px solid #bbb;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.dependent-list { list-style: none; padding: 0; margin: 16px 0; display: flex; flex-direction: column; gap: 10px; }
+.dependent-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.lesho-video-placeholder {
+  background: #222;
+  color: #fff;
+  border-radius: 10px;
+  padding: 40px 16px;
+  text-align: center;
+  margin: 16px 0;
+  font-size: 1.05rem;
+}
+.lesho-captions {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #eee;
+  font-style: italic;
+}
+
+.icon-menu { display: grid; gap: 12px; grid-template-columns: 1fr; margin-bottom: 16px; }
+@media (min-width: 480px) { .icon-menu { grid-template-columns: 1fr 1fr; } }
+.icon-menu button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px;
+}
+.icon-menu .icon-big { font-size: 2rem; }
+
+.app-footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+/* Panel institucional */
+.panel-main { max-width: 900px; margin: 0 auto; padding: 24px 16px 60px; }
+table.review-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+table.review-table caption { text-align: left; font-weight: 700; margin-bottom: 10px; font-size: 1.1rem; }
+table.review-table th, table.review-table td {
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  text-align: left;
+}
+table.review-table th { background: #f0f0f0; }
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+.status-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.status-dot.status-pendiente { background: #E0A800; }
+.status-dot.status-aprobado { background: #2E7D32; }
+.status-dot.status-rechazado { background: #C62828; }
+.status-badge.status-aprobado { color: #1B5E20; }
+.status-badge.status-rechazado { color: #8B1A1A; }
+.status-badge.status-pendiente { color: #8A6100; }
+
+.row-actions button {
+  margin-right: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #999;
+  background: #fff;
+  cursor: pointer;
+}
+
+.detail-panel {
+  margin-top: 20px;
+  background: #fff;
+  border: 2px solid var(--wa-header);
+  border-radius: 10px;
+  padding: 16px;
+}
